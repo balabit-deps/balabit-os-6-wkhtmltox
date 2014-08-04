@@ -1,0 +1,13 @@
+wkhtmltox (0.12.1) precise; urgency=low
+
+  * removed support for PostScript output which is not supported in QT5
+  * use OpenSSL 1.0.1g for the Windows builds
+  * fix compilation failures when not building with patched Qt/WebKit
+  * support building with non-patched Qt4/Qt5 in either shared or static mode
+  * implement a --license command line option
+  * update URLs in the internal documentation
+  * generate API documentation for libwkhtmltox (on the website)
+  * display version in compiled binary properly under various scenarios
+  * complete revamp of the build system, which now generates native packages on all platforms
+
+ -- Szabolcs Szondi <xxaby@balabit.com>  Mon, 4 Aug 2014 13:10:32 +0200

@@ -972,14 +972,6 @@ def build_mingw64_cross(config, basedir):
 # -------------------------------------------------- Linux schroot environment
 
 def check_linux_schroot(config):
-    # shell('schroot -c wkhtmltopdf-%s -- gcc --version' % rchop(config, '-dbg'))
-    root_dir = './static-build/precise-amd64'
-    chroot = 'precise'
-    args, cfg = fpm_setup(chroot)
-    cmd = '#!/bin/sh\nXZ_OPT=-9 fpm --force %s --package ../%s-$1_linux-%s-$2.%s .\n'
-    loc = os.path.join(root_dir, 'fpm_package.sh')
-    open(loc, 'w').write(cmd % (args, cfg['--name'], chroot, cfg['-t']))
-    shell('chmod a+x %s' % loc)
     pass
 
 def build_linux_schroot(config, basedir):
@@ -1014,8 +1006,6 @@ def build_linux_schroot(config, basedir):
     lines.append('export WKHTMLTOX_VERSION=%s' % version)
     lines.append('../qt/bin/qmake ../../../wkhtmltopdf.pro')
     lines.append('make install INSTALL_ROOT=%s || exit 1' % dist)
-    lines.append('cd ..')
-    lines.append('./fpm_package.sh %s %s' % (version, config[1+config.index('-'):]))
     lines.append('# end of build script')
 
     open(script, 'w').write('\n'.join(lines))
