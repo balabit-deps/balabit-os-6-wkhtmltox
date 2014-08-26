@@ -1,0 +1,23 @@
+cmd=$1
+shift
+case "$cmd" in
+    bootstrap)
+        git submodule init
+        git submodule update
+        ./scripts/build.py precise-amd64
+        echo "$ZWA_INSTALL_DIR"
+        cp -r $ZWA_SOURCE_DIR/wkhtmltox/static-build/precise-amd64/dist/* $ZWA_INSTALL_DIR/
+        ;;
+
+    configure)
+        ;;
+
+    make)
+        ./scripts/build.py precise-amd64 "$@"
+        ;;
+
+    *)
+        echo "Unknown command: $cmd" >&2
+        exit 1
+        ;;
+esac
