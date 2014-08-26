@@ -972,7 +972,7 @@ def build_mingw64_cross(config, basedir):
 # -------------------------------------------------- Linux schroot environment
 
 def check_linux_schroot(config):
-    shell('schroot -c wkhtmltopdf-%s -- gcc --version' % rchop(config, '-dbg'))
+    pass
 
 def build_linux_schroot(config, basedir):
     version, simple_version = get_version(basedir)
@@ -1006,14 +1006,12 @@ def build_linux_schroot(config, basedir):
     lines.append('export WKHTMLTOX_VERSION=%s' % version)
     lines.append('../qt/bin/qmake ../../../wkhtmltopdf.pro')
     lines.append('make install INSTALL_ROOT=%s || exit 1' % dist)
-    lines.append('cd ..')
-    lines.append('/fpm_package.sh %s %s' % (version, config[1+config.index('-'):]))
     lines.append('# end of build script')
 
     open(script, 'w').write('\n'.join(lines))
     os.chdir(dir)
     shell('chmod +x build.sh')
-    shell('schroot -c wkhtmltopdf-%s -- ./build.sh' % rchop(config, '-dbg'))
+    shell('./build.sh')
 
 
 # -------------------------------------------------- POSIX local environment

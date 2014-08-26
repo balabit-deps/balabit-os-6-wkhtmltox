@@ -1,0 +1,19 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_clean:
+	rm -rf static-build
+	dh_clean
+
+override_dh_auto_configure:
+	git submodule init
+	git submodule update
+
+override_dh_auto_build:
+	scripts/build.py precise-amd64
+
+override_dh_install:
+	cp -r $$(pwd)/static-build/precise-amd64/dist/* $$(pwd)/debian/wkhtmltox/
+	dh_install
