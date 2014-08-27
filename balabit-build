@@ -13,7 +13,7 @@ case "$cmd" in
         ;;
 
     make)
-        ./scripts/build.py precise-amd64 "$@"
+        ./scripts/build.py precise-amd64
         ;;
 
     *)
