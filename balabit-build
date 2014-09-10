@@ -1,6 +1,19 @@
 cmd=$1
 shift
 case "$cmd" in
+    get-version)
+	    dpkg-parsechangelog | grep Version: | sed -e 's,^Version: ,,'
+	    ;;
+
+    build-exclude-list|dist-exclude-list)
+    ##    These lists can be used to delegate build-time and dist-time exclude lists
+    ##    For example (syslog-ng-agent):
+    ##    echo "out obj *.aqt *.ncb *.suo *.vcproj.*.user"
+        ;;
+
+    prepare-dist)
+        ;;
+
     bootstrap)
         git submodule init
         git submodule update
