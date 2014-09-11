@@ -15,11 +15,9 @@ case "$cmd" in
         ;;
 
     bootstrap)
+        cd $ZWA_SOURCE_DIR/wkhtmltox/
         git submodule init
         git submodule update
-        ./scripts/build.py precise-amd64
-        echo "$ZWA_INSTALL_DIR"
-        cp -r $ZWA_SOURCE_DIR/wkhtmltox/static-build/precise-amd64/dist/* $ZWA_INSTALL_DIR/
         ;;
 
     configure)
@@ -27,6 +25,7 @@ case "$cmd" in
 
     make)
         ./scripts/build.py precise-amd64
+        cp -r $ZWA_SOURCE_DIR/wkhtmltox/static-build/precise-amd64/dist/* $ZWA_INSTALL_DIR/
         ;;
 
     *)
