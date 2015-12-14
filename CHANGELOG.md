@@ -1,3 +1,7 @@
+v0.12.1-1 (2015-12-14)
+----------------------
+* Skip installing docs, lib, headers and wkhtmltoimage to reduce the size.
+
 v0.12.1 (2014-06-26)
 --------------------
 * removed support for PostScript output which is not supported in QT5
