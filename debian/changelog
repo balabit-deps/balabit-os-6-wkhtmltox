@@ -1,3 +1,9 @@
+wkhtmltox (0.12.1-2) xenial; urgency=low
+
+  * update package for xenial
+
+ -- Szabolcs Szondi <szabolcs.szondi@balabit.com>  Tue, 19 Jul 2016 12:43:35 +0200
+
 wkhtmltox (0.12.1-1) precise; urgency=low
 
   * Skip installing docs, lib, headers and wkhtmltoimage to reduce the size.
