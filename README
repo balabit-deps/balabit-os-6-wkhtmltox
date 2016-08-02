@@ -1,0 +1,24 @@
+wkhtml-test
+-----------
+
+helps us to be ensure wkhtml works as we expect
+we recommend to run this test after all wkhtml upgrades
+
+usage:
+
+in one step: run check
+   build test environment and start self-test automatically
+
+or
+
+1. build test environment
+2. run test
+   during running self-test wkhtml is compiled so the test takes more than 20 minutes
+
+commands:
+
+"./wkhtml-test build-environment"   to build docker image contains the test environment
+"./wkhtml-test test"                to run self-test only
+"./wkhtml-test check"               to build test environment and run self-test
+"./wkhtml-test run-environment"     to debug test environment
+

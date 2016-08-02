@@ -1,0 +1,38 @@
+/***********************************
+ * Copyright (c) 2013-2016 BalaBit *
+ * All Rights Reserved.            *
+ ***********************************/
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    font-family: "Liberation Sans", "serif";
+}
+
+.header {
+    background: #2981C4;
+    height: 40px;
+    box-sizing: border-box;
+    position: relative;
+    padding: 8px 38px 0 10px;
+    line-height: 25px;
+}
+
+.header-content {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #FFF;
+    font-size: 19px;
+    vertical-align: middle;
+}
+
+.header-logo {
+    position: absolute;
+    top: 7px;
+    right: 6px;
+    width: 25px;
+}

@@ -1,0 +1,44 @@
+cmd=$1
+shift
+
+run_selftest(){
+    WKHTML_DIR=$(readlink -f ./)
+    docker run --rm -it -v $WKHTML_DIR:/wkhtmltox -w "/wkhtmltox" -e ZWA_SOURCE_DIR='/' wkhtmltox tests/tools/run_test.sh
+    return_code=$?
+    case "$return_code" in
+        0)
+        echo "Tests run successful! :)"
+        ;;
+        *)
+        echo "Tests FAILED! :("
+        ;;
+    esac
+}
+
+build_env(){
+    ./tests/environment/build-environment.sh
+}
+
+case "$cmd" in
+    build-environment)
+	    build_env
+	    ;;
+
+    test)
+        run_selftest
+        ;;
+
+    check)
+        build_env
+    	run_selftest
+        ;;
+
+    run-environment)
+        ./tests/environment/run-environment.sh
+        ;;
+
+    *)
+        echo "Unknown command: $cmd" >&2
+        exit 1
+        ;;
+esac
