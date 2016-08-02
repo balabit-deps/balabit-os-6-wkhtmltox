@@ -1,0 +1,16 @@
+/***********************************
+ * Copyright (c) 2013-2016 BalaBit *
+ * All Rights Reserved.            *
+ ***********************************/
+
+div.title_enum {
+    display: none
+}
+
+div.chapter_depth_2, div.chapter_depth_3, div.chart_formatted_txt {
+    padding-left: 0.33cm;
+}
+
+p.listTitle {
+    display: none;
+}
