@@ -24,8 +24,8 @@ case "$cmd" in
         ;;
 
     make)
-        ./scripts/build.py precise-amd64
-        cp -r $ZWA_SOURCE_DIR/wkhtmltox/static-build/precise-amd64/dist/* $ZWA_INSTALL_DIR/
+        ./scripts/build.py precise-amd64 -debug
+        cp -r $ZWA_SOURCE_DIR/wkhtmltox/static-build/precise-amd64-dbg/dist/* $ZWA_INSTALL_DIR/
         ;;
 
     *)

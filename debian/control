@@ -9,3 +9,9 @@ Architecture: amd64
 Depends: fontconfig, libfontconfig1, libfreetype6, libpng12-0, zlib1g, libjpeg8, libssl1.0.0, libx11-6, libxext6, libxrender1, libstdc++6, libc6
 Description: convert HTML to PDF and various image formats using QtWebkit
  Tool for convert HTML to PDF with QtWebkit without X server.
+
+Package: wkhtmltox-dbg
+Section: libdevel
+Architecture: amd64
+Depends: wkhtmltox (= ${binary:Version}), ${misc:Depends}
+Description: debug symbols for wkhtmltox debpackages
