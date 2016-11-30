@@ -1,3 +1,9 @@
+wkhtmltox (0.12.1-3) xenial; urgency=low
+
+  * add debug symbols package
+
+ -- Szabolcs Szondi <szabolcs.szondi@balabit.com>  Wed, 30 Nov 2016 09:00:35 +0200
+
 wkhtmltox (0.12.1-2) xenial; urgency=low
 
   * update package for xenial
